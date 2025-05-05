@@ -7,12 +7,27 @@
  <body>
   <form>
     Возраст:
-   <input>
+   <input id="ageinput">
    <div>
-    <input type="radio" name="gender">Мужчина
-    <input type="radio" name="gender">Женщина
+    <input id="maleradio" type="radio" name="genderradio">Мужчина
+    <input type="radio" name="genderradio">Женщина
    </div>
-   <input type="submit" value="Рассчитать">
+   <input id="calculateButton" type="submit" value="Рассчитать">
+   <script>
+    'use strict';
+	calculateButton.addEventListener('click', calculate);
+	function calculate(){
+	let age = ageinput.value;
+    let male = maleradio.checked;
+	if (0 <= age <= 17) {
+	result.value = 'HEY';
+	}
+	else{alert('Ты кто такой давай до свиданья');}
+	}
+   </script>
+   <textarea id='result'>
+   </textarea>
   </form>
+  
  </body>
 </html>
