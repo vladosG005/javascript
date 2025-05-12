@@ -13,7 +13,16 @@
         </p>
         <input type="submit" value="Считать">
         </form>
-    <script></script>
+    <script>
+        'use strict';
+
+        f.addEventListener('sumbit', count);
+
+        function count() {
+            let num = crowinput.value;
+            alert(`На ветке сидит ${num}`);
+        }
+    </script>
     <noscript>Страница может работать некорректно, т.к. отключена поддержка JS.</noscript>
     
 </body>
