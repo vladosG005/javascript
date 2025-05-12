@@ -6,16 +6,25 @@
  </head>
  <body>
   <form id="f">
+    <p>
+   <label>
     Возраст:
    <input id="ageinput">
+   </label>
+   </p>
+   <p>
    <div>
-    <input id="maleradio" type="radio" name="genderradio">Мужчина
-    <input type="radio" name="genderradio">Женщина
+    <label><input id="maleradio" type="radio" name="genderradio">Мужчина</label>
+    <label><input type="radio" name="genderradio">Женщина</label>
    </div>
-   <input type="submit" value="Рассчитать">
-   
+   </p>
+   <p>
+   <label>
    <textarea id='result' autocomplete="off" readonly>
    </textarea>
+   </label>
+   </p>
+   <input type="submit" value="Рассчитать">
   </form>
   <script>
     'use strict';
