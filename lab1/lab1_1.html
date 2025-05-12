@@ -24,17 +24,16 @@
 	event.preventDefault();
 	let age = ageinput.value;
     let male = maleradio.checked;
-	if (0 <= age <= 17) {
+	if (age >= 0 && age <= 17) {
 	result.value = 'Вам работать ещё рано: учитесь!';
-	
 	}
-	else if (18 <= age <= 59 && male || 18 <= age <= 54 && !male){
+	else if (age >= 18 && age <= 59 && (age <= 54 || male)){
         result.value = 'Вам ещё работать и работать...';
     }
-    else if (60 <= age <= 64 && male || 55 <= age <= 59 && !male){
+    else if (age >= 60 && age <= 64 && male || age >= 55 && age <= 59 && !male){
         result.value = 'Скоро пенсия!';
     }
-    else if (age >= 65 && male || age >= 60 && !male){
+    else if (age >= 60 && (age >= 65 || !male)){
         result.value = 'Вам пора на пенсию.';
     }
     else {
