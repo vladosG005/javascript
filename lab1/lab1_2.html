@@ -16,20 +16,22 @@
     <script>
         'use strict';
 
-        f.addEventListener('sumbit', count);
-
+        f.addEventListener('submit', count);
+        
         function count() {
+		event.preventDefault();
             let num = crowinput.value;
-            if (num > 0 && num.floor() == num){
+            if (num > 0 && Math.floor(num) == num) {
             let crows = '';
             switch (num % 10) {
                 case 1:
-                crows = num % 10 / 10 == 1 ? 'ворон' : 'ворона';
+                crows = Math.floor(num % 100 / 10) == 1 ? 'ворон' : 'ворона';
                 break;
                 case 2:
                 case 3:
                 case 4:
-                    crows = num % 10 / 10 == 1 ? 'ворон' : 'вороны';
+                    crows = Math.floor(num % 100 / 10) == 1 ? 'ворон' : 'вороны';
+					break;
                 default:
                     crows = 'ворон';
             }
