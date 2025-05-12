@@ -7,7 +7,7 @@
 <body>
     <form id="f">
         <p>
-        <label>Изначальное количество ворон:
+        <label>Количество ворон:
             <input id="crowinput" required>
         </label>
         </p>
@@ -20,7 +20,24 @@
 
         function count() {
             let num = crowinput.value;
-            alert(`На ветке сидит ${num}`);
+            if (num > 0 && num.floor() == num){
+            let crows = '';
+            switch (num % 10) {
+                case 1:
+                crows = num % 10 / 10 == 1 ? 'ворон' : 'ворона';
+                break;
+                case 2:
+                case 3:
+                case 4:
+                    crows = num % 10 / 10 == 1 ? 'ворон' : 'вороны';
+                default:
+                    crows = 'ворон';
+            }
+            alert(`На ветке сидит ${num} ${crows}`);
+            }
+        else{
+            alert(`Неверный ввод!`);
+        }
         }
     </script>
     <noscript>Страница может работать некорректно, т.к. отключена поддержка JS.</noscript>
