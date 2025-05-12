@@ -19,21 +19,26 @@
   </form>
   <script>
     'use strict';
+
 	f.addEventListener('submit', calculate);
-	function calculate(){
+
+	function calculate() {
+
 	event.preventDefault();
+
 	let age = ageinput.value;
     let male = maleradio.checked;
+
 	if (age >= 0 && age <= 17) {
-	result.value = 'Вам работать ещё рано: учитесь!';
+	    result.value = 'Вам работать ещё рано: учитесь!';
 	}
-	else if (age >= 18 && age <= 59 && (age <= 54 || male)){
+	else if (age >= 18 && age <= 59 && (age <= 54 || male)) {
         result.value = 'Вам ещё работать и работать...';
     }
-    else if (age >= 60 && age <= 64 && male || age >= 55 && age <= 59 && !male){
+    else if (age >= 60 && age <= 64 && male || age >= 55 && age <= 59 && !male) {
         result.value = 'Скоро пенсия!';
     }
-    else if (age >= 60 && (age >= 65 || !male)){
+    else if (age >= 60 && (age >= 65 || !male)) {
         result.value = 'Вам пора на пенсию.';
     }
     else {
@@ -41,7 +46,6 @@
     }
 
 	}
-	
    </script>
  </body>
 </html>
