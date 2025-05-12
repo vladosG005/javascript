@@ -5,7 +5,7 @@
   <title>Пенсионный калькулятор</title>
  </head>
  <body>
-  <form>
+  <form id="f">
     Возраст:
    <input id="ageinput">
    <div>
@@ -13,21 +13,36 @@
     <input type="radio" name="genderradio">Женщина
    </div>
    <input id="calculateButton" type="submit" value="Рассчитать">
-   <script>
-    'use strict';
-	calculateButton.addEventListener('click', calculate);
-	function calculate(){
-	let age = ageinput.value;
-    let male = maleradio.checked;
-	if (0 <= age <= 17) {
-	result.value = 'HEY';
-	}
-	else{alert('Ты кто такой давай до свиданья');}
-	}
-   </script>
+   
    <textarea id='result'>
    </textarea>
   </form>
-  
+  <script>
+    'use strict';
+	f.addEventListener('submit', calculate);
+	function calculate(){
+	event.preventDefault();
+	let age = ageinput.value;
+    let male = maleradio.checked;
+	if (0 <= age <= 17) {
+	result.value = 'Вам работать ещё рано: учитесь!';
+	
+	}
+	else if (18 <= age <= 59 && male || 18 <= age <= 54 && !male){
+        result.value = 'Вам ещё работать и работать...';
+    }
+    else if (60 <= age <= 64 && male || 55 <= age <= 59 && !male){
+        result.value = 'Скоро пенсия!';
+    }
+    else if (age >= 65 && male || age >= 60 && !male){
+        result.value = 'Вам пора на пенсию.';
+    }
+    else {
+        result.value = 'Да кто ты такой?';
+    }
+
+	}
+	
+   </script>
  </body>
 </html>
