@@ -1,48 +1,61 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Считать ворон</title>
-</head>
-<body>
-    <form id="f">
-        <p>
-        <label>Количество ворон:
-            <input id="crowinput" required>
-        </label>
-        </p>
-        <input type="submit" value="Считать">
-        </form>
-    <script>
-        'use strict';
+ <head>
+  <meta charset="UTF-8">
+  <title>Считать ворон</title>
+ </head>
+ <body>
 
-        f.addEventListener('submit', count);
+  <form id="f">
+   <p>
+    <label>
+     Количество ворон:
+     <input id="crowinput" required>
+    </label>
+   </p>
+
+   <input type="submit" value="Считать">
+  </form>
+
+  <script>
+   'use strict';
+
+   f.addEventListener('submit', count);
         
-        function count() {
-		event.preventDefault();
-            let num = crowinput.value;
-            if (num > 0 && Math.floor(num) == num) {
-            let crows = '';
-            switch (num % 10) {
-                case 1:
-                crows = Math.floor(num % 100 / 10) == 1 ? 'ворон' : 'ворона';
-                break;
-                case 2:
-                case 3:
-                case 4:
-                    crows = Math.floor(num % 100 / 10) == 1 ? 'ворон' : 'вороны';
-					break;
-                default:
-                    crows = 'ворон';
-            }
-            alert(`На ветке сидит ${num} ${crows}`);
-            }
-        else{
-            alert(`Неверный ввод!`);
-        }
-        }
-    </script>
-    <noscript>Страница может работать некорректно, т.к. отключена поддержка JS.</noscript>
+   function count() {
+
+       event.preventDefault();
+
+       let num = crowinput.value;
+
+       if (num > 0 && Math.floor(num) == num) {
+
+           let crows = '';
+
+           switch (num % 10) {
+               case 1:
+                   crows = Math.floor(num % 100 / 10) == 1 ? 'ворон' : 'ворона';
+                   break;
+               case 2:
+               case 3:
+               case 4:
+                   crows = Math.floor(num % 100 / 10) == 1 ? 'ворон' : 'вороны';
+		    	   break;
+               default:
+                   crows = 'ворон';
+           }
+
+           alert(`На ветке сидит ${num} ${crows}.`);
+       }
+
+       else {
+           alert(`Неверный ввод!`);
+       }
+       
+   }
+  </script>
+
+  <noscript>Страница может работать некорректно, т.к. отключена поддержка JS.</noscript>
     
-</body>
+ </body>
 </html>
