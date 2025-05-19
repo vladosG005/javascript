@@ -28,7 +28,7 @@
 
        let num = crowinput.value;
 
-       if (num > 0 && Math.floor(num) == num) {
+       if (num > 0 && Number.isInteger(num)) {
            let crows = '';
 
            switch (num % 10) {
@@ -48,7 +48,7 @@
        }
 
        else {
-           alert(`Неверный ввод!`);
+           alert('Неверный ввод!');
        }
        
    }
