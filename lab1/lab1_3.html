@@ -13,13 +13,15 @@
     link.addEventListener('click', getNumber);
 
     function getNumber() {
-        b = true;
+        let b = true;
         while (b) {
-            x = prompt("Введите число:");
+            x = prompt('Введите число:');
             if (x > 100) {
                 b = false;
             }
         }
+        return true;
+        confirm('Вы точно хотите перейти по ссылке?');
     }
   </script>
 
