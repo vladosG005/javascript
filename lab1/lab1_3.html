@@ -13,9 +13,8 @@
     link.addEventListener('click', goToLink);
     function goToLink() {
         if (!getNumber()){
-            event.preventDefault();
-            if (confirm('Вы точно хотите перейти по ссылке?')){
-                this.href = '';
+            if (!confirm('Вы точно хотите перейти по ссылке?')){
+                event.preventDefault();
             }
         }
     }
