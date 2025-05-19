@@ -11,17 +11,19 @@
   <script>
     'use strict';
     link.addEventListener('click', getNumber);
-
+    //confirm('Вы точно хотите перейти по ссылке?');
     function getNumber() {
         let b = true;
         while (b) {
-            x = prompt('Введите число:');
+            let x = prompt('Введите число:');
+            if (x == null){
+                return false;
+            }
             if (x > 100) {
                 b = false;
             }
         }
         return true;
-        confirm('Вы точно хотите перейти по ссылке?');
     }
   </script>
 
