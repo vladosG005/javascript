@@ -14,6 +14,13 @@
     </label>
    </p>
 
+   <p>
+    <label>
+     <textarea id='numbers' readonly>
+     </textarea>
+    </label>
+   </p>
+
    <input type="submit" value="Найти">
   </form>
 
@@ -22,8 +29,23 @@
 
    f.addEventListener('submit', primes);
 
-   function primes(){
-    n = ninput.value;
+   function primes() {
+
+       let n = ninput.value;
+
+       for (let i = 2; i <= n; i++) {
+           let b = true;
+           for (let j = 2; j <= Math.sqrt(i); j++) {
+               if (i % j == 0) {
+                   b = false;
+                   break;
+               }
+           }
+           if (b) {
+            numbers.value += i.toString();
+           }
+       }
+
    }
   </script>
  </body>
