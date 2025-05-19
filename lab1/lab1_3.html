@@ -5,6 +5,25 @@
   <title>Ввод числа</title>
  </head>
  <body>
-  <a>Ссылка</a>  
+
+  <a id="link" href="../index.html">Получить число</a>
+
+  <script>
+    'use strict';
+    link.addEventListener('click', getNumber);
+
+    function getNumber() {
+        b = true;
+        while (b) {
+            x = prompt("Введите число:");
+            if (x > 100) {
+                b = false;
+            }
+        }
+    }
+  </script>
+
+  <noscript>Страница может работать некорректно, т.к. отключена поддержка JS.</noscript>
+
  </body>
 </html>
