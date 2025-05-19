@@ -10,7 +10,7 @@
    <p>
     <label>
      Введите количество строк:
-     <input id="ninput" required>
+     <input id="input" required>
     </label>
    </p>
 
@@ -18,10 +18,22 @@
   </form>
 
   <script>
-    'use strict';
+   'use strict';
 
-    </script>
-<noscript>Страница может работать некорректно, т.к. отключена поддержка JS.</noscript>
+   n = input.value;
+
+   f.addEventListener('submit', draw);
+
+   function draw() {
+
+       for (let i = 0; i < n; i++) {
+           console.log('%s\t%s\t%s\t%s\t%s\t%s', 'dog', 'dog', 'dog', 'cat', 'cat')
+       }
+
+   }
+  </script>
+
+  <noscript>Страница может работать некорректно, т.к. отключена поддержка JS.</noscript>
 
  </body>
 </html>
