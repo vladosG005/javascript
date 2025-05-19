@@ -10,10 +10,17 @@
 
   <script>
     'use strict';
-    link.addEventListener('click', getNumber);
-    //confirm('Вы точно хотите перейти по ссылке?');
+    link.addEventListener('click', goToLink);
+    function goToLink() {
+        if (!getNumber()){
+            event.preventDefault();
+            if (confirm('Вы точно хотите перейти по ссылке?')){
+                this.href = '';
+            }
+        }
+    }
     function getNumber() {
-        event.preventDefault();
+        
         while (true) {
             let x = prompt('Введите число, большее 100:');
             if (x == null){
