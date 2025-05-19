@@ -5,7 +5,26 @@
   <title>Простые числа</title>
  </head>
  <body>
-  <textarea></textarea>
-  <button>Найти</button>
+
+  <form id="f">
+   <p>
+    <label>
+     Введите n:
+     <input id="ninput" required>
+    </label>
+   </p>
+
+   <input type="submit" value="Найти">
+  </form>
+
+  <script>
+   'use strict';
+
+   f.addEventListener('submit', primes);
+
+   function primes(){
+    n = ninput.value;
+   }
+  </script>
  </body>
 </html>
