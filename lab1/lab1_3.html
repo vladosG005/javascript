@@ -13,6 +13,7 @@
     link.addEventListener('click', getNumber);
     //confirm('Вы точно хотите перейти по ссылке?');
     function getNumber() {
+        event.preventDefault();
         while (true) {
             let x = prompt('Введите число, большее 100:');
             if (x == null){
