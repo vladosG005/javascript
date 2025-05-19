@@ -9,27 +9,33 @@
   <a id="link" href="../index.html">Получить число</a>
 
   <script>
-    'use strict';
-    link.addEventListener('click', goToLink);
-    function goToLink() {
-        if (!getNumber()){
-            if (!confirm('Вы точно хотите перейти по ссылке?')){
-                event.preventDefault();
-            }
-        }
-    }
-    function getNumber() {
-        
-        while (true) {
-            let x = prompt('Введите число, большее 100:');
-            if (x == null){
-                return false;
-            }
-            if (x > 100) {
-                return true;
-            }
-        }
-    }
+   'use strict';
+
+   link.addEventListener('click', goToLink);
+
+   function goToLink() {
+
+       if (!getNumber()) {
+           if (!confirm('Вы точно хотите перейти по ссылке?')) {
+               event.preventDefault();
+           }
+       }
+
+   }
+
+   function getNumber() {
+
+       while (true) {
+           let x = prompt('Введите число, большее 100:');
+           if (x == null){
+               return false;
+           }
+           if (x > 100) {
+               return true;
+           }
+       }
+
+   }
   </script>
 
   <noscript>Страница может работать некорректно, т.к. отключена поддержка JS.</noscript>
