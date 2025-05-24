@@ -20,14 +20,36 @@
   <script>
    'use strict';
 
-   n = input.value;
-
    f.addEventListener('submit', draw);
 
    function draw() {
 
+       event.preventDefault();
+
+       let n = input.value;
+
        for (let i = 0; i < n; i++) {
-           console.log('%s\t%s\t%s\t%s\t%s\t%s', 'dog', 'dog', 'dog', 'cat', 'cat')
+           switch(i % 5) {
+               case 0:
+                   console.log('%s\t%s\t%s\t%s\t%s\t%s', 'dog', 'dog', 'dog',
+                   'cat', 'cat', 'dog');
+                   break;
+               case 1:
+                   console.log('%s\t%s\t%s\t%s\t%s\t%s', 'dog', 'dog', 'cat',
+                   'cat', 'dog', 'dog');
+                   break;
+               case 2:
+                   console.log('%s\t%s\t%s\t%s\t%s\t%s', 'dog', 'cat', 'cat',
+                   'dog', 'dog', 'dog');
+                   break;
+               case 3:
+                   console.log('%s\t%s\t%s\t%s\t%s\t%s', 'cat', 'cat', 'dog',
+                   'dog', 'dog', 'cat');
+                   break;
+               default:
+                   console.log('%s\t%s\t%s\t%s\t%s\t%s', 'cat', 'dog', 'dog',
+                   'dog', 'cat', 'cat');
+           }  
        }
 
    }
