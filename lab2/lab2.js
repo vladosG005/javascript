@@ -144,7 +144,7 @@ function fib(n) {
 */
 function compare(x) {
 	
-    if (Math.floor(n) != n) {
+    if (Math.floor(x) != x) {
         return null;
     }
 	
