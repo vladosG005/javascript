@@ -57,7 +57,37 @@ function factorial(n) {
 }
 
 function fib(n) {
+    
+    let x1 = -1n;
+    let x = 0n;
+    let t = 0n;
+    
+	let i = 0;
+	if (n != 0) {
+        // Количество знаков в двоичной записи
+	    i = Math.ceil(Math.log2(Math.abs(n)));
+	}
+    
+    while (i--) {
 
+        // Удвоение номера числа Фибоначчи
+		t = x * (2n * x1 + x);
+        x1 = x1 * x1 + x * x;
+        x = t;
+
+        // Если i-ый разряд n == 1, то рассчитывается следующее число Фибоначчи
+        if (Math.floor(n % 2 ** (i + 1) / 2 ** i) != 0) {
+            t = x + x1;
+            x1 = x;
+            x = t;
+        }
+        
+    }
+    
+	x = n < 0 && n % 2 == 0 ? -x : x; 
+    
+    return x;
+    
 }
 
 function compare(x) {
