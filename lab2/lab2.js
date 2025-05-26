@@ -2,6 +2,10 @@
 
 function pow(x, n) {
 
+    if (Math.floor(n) != n) {
+        return NaN;
+    }
+
     if (n == 0) {
         if (x == 0) {
             return NaN;
@@ -30,15 +34,56 @@ let sumTo = new Function('n', `let s = 0;
     }
     return s;`);
 
-function isLeapYear (year) {
+function isLeapYear(year) {
 
     return year % 4 == 0 ?
             year % 100 == 0 ?
-                year % 400 == 0 ?
-                    year % 3200 == 0 ? false 
-                    : true
+                year % 400 == 0 ? true
                 : false
             : true
         : false;
         
+}
+
+function factorial(n) {
+
+    if (n == 0n) {
+        return 1n;
+    }
+    else {
+        return BigInt(n) * factorial(n - 1);
+    }
+
+}
+
+function fib(n) {
+
+}
+
+function compare(x) {
+
+    return function(y) {
+
+        return y > x ? true
+            : y == x ? null
+            : false;
+
+    }
+
+}
+
+function sum(...args) {
+
+    let s = 0;
+
+    for (let i of args) {
+        s += i;
+    }
+
+    return s;
+
+}
+
+function addBlackSpot(obj) {
+    
 }
