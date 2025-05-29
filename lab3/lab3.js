@@ -5,7 +5,7 @@
 */
 export function getDecimal(num) {
 
-    return (num - Math.floor(num)).toFixed(15);
+    return (num - Math.floor(num)).toFixed(15).toNumber();
 
 }
 
@@ -54,22 +54,33 @@ export function truncate(str, maxlength) {
 }
 
 /*
- * .
+ * Переводит строку в "верблюжий стиль", удаляя дефисы и переводя буквы в этих местах в верхний регистр.
  * @param {string} str - исходная строка.
- * @return {string} str 
+ * @return {string} str в "верблюжьем стиле".
 */
 export function camelize(str) {
+
     str = str.split('-');
+
     str.forEach(ucFirst);
+
     return str.join();
+
 }
 
+/*
+ * Возвращает строку с первым символом в верхнем регистре.
+ * @param {string} str - исходная строка.
+ * @return {string} str с первым символом в верхнем регистре.
+*/
 function ucFirst(str) {
-    str[0] = str[0].toUpperCase;
+
+    str = str[0].toUpperCase + str.slice(1);
     return str;
+
 }
 export function fibs(n) {
-    a = 5
+
 }
 
 export function arrReverseSorted(arr) {
