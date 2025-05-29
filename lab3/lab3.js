@@ -5,7 +5,7 @@
 */
 export function getDecimal(num) {
 
-    return num - Math.floor(num).toFixed(15);
+    return (num - Math.floor(num)).toFixed(15);
 
 }
 
@@ -37,7 +37,20 @@ export function checkSpam(str) {
 
 }
 
+/*
+ * Сокращает строку до указанного количества символов.
+ * @param {string} str - исходная строка.
+ * @param {number} maxlength - максимальное число символов в возвращаемой строке.
+ * @return {string} str, сокращённую до maxlength символов с троеточием в виде последнего символа, если её длина превышает maxlength, иначе просто str. 
+*/
 export function truncate(str, maxlength) {
+
+    if (str.length <= maxlength) {
+        return str;
+    }
+
+    return str.slice(maxlength - 1) + '\u2026';
+
 }
 
 export function camelize(str) {
