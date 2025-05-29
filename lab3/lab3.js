@@ -5,7 +5,7 @@
 */
 export function getDecimal(num) {
 
-    return num - Math.floor(num);
+    return num - Math.floor(num).toFixed(15);
 
 }
 
@@ -16,7 +16,7 @@ export function getDecimal(num) {
 */
 export function normalizeUrl(url) {
     
-    url.replace('http://', 'https://');
+    url = url.replace('http://', 'https://');
 
     if (!url.startsWith('https://')) {
         url = 'https://' + url;
