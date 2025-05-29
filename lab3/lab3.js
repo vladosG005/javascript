@@ -53,10 +53,23 @@ export function truncate(str, maxlength) {
 
 }
 
+/*
+ * .
+ * @param {string} str - исходная строка.
+ * @return {string} str 
+*/
 export function camelize(str) {
+    str = str.split('-');
+    str.forEach(ucFirst);
+    return str.join();
 }
 
+function ucFirst(str) {
+    str[0] = str[0].toUpperCase;
+    return str;
+}
 export function fibs(n) {
+    a = 5
 }
 
 export function arrReverseSorted(arr) {
