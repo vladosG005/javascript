@@ -111,13 +111,13 @@ function fib(n) {
     let i = 0;
     if (n != 0) {
         // Количество знаков в двоичной записи
-	i = Math.ceil(Math.log2(Math.abs(n)));
+	    i = Math.ceil(Math.log2(Math.abs(n)));
     }
     
     while (i--) {
 
         // Удвоение номера числа Фибоначчи
-	t = x * (2n * x1 + x);
+	    t = x * (2n * x1 + x);
         x1 = x1 * x1 + x * x;
         x = t;
 
