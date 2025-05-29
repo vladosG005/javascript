@@ -1,3 +1,5 @@
+import {fib} from '../lab2/lab2.js';
+
 /*
  * Возвращает дробную часть числа, т.е. какое положительное число, меньшее 1, необходимо вычесть, чтобы получить целое число.
  * @param {number} num - исходное число.
@@ -5,7 +7,7 @@
 */
 export function getDecimal(num) {
 
-    return (num - Math.floor(num)).toFixed(15).toNumber();
+    return Number((num - Math.floor(num)).toFixed(15));
 
 }
 
@@ -60,11 +62,7 @@ export function truncate(str, maxlength) {
 */
 export function camelize(str) {
 
-    str = str.split('-');
-
-    str.forEach(ucFirst);
-
-    return str.join();
+    return str.split('-').map(ucFirst).join('');
 
 }
 
@@ -75,10 +73,11 @@ export function camelize(str) {
 */
 function ucFirst(str) {
 
-    str = str[0].toUpperCase + str.slice(1);
+    str = str[0].toUpperCase() + str.slice(1);
     return str;
 
 }
+
 export function fibs(n) {
 
 }
