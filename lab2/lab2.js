@@ -9,7 +9,7 @@
 */
 function pow(x, n) {
 
-    if (Math.floor(n) != n) {
+    if (Math.floor(n) - n >= Number.EPSILON) {
         return NaN;
     }
 
@@ -41,7 +41,7 @@ function pow(x, n) {
  * @param {number} n - максимальное натуральное число, входящее в сумму.
  * @return {number} NaN, если n - не натуральное, в остальных случаях сумму чисел от 1 до n.
 */
-let sumTo = new Function('n', `if (Math.floor(n) != n || n < 1) {
+let sumTo = new Function('n', `if (Math.floor(n) - n >= Number.EPSILON || n < 1) {
         return NaN;
     }
     
@@ -78,7 +78,7 @@ function isLeapYear(year) {
 */
 function factorial(n) {
 
-    if (Math.floor(n) != n || n < 0) {
+    if (Math.floor(n) - n >= Number.EPSILON || n < 0) {
         return NaN;
     }
 
@@ -100,7 +100,7 @@ function factorial(n) {
 */
 function fib(n) {
 	
-    if (Math.floor(n) != n) {
+    if (Math.floor(n) - n >= Number.EPSILON) {
         return NaN;
     }
 	
@@ -144,7 +144,7 @@ function fib(n) {
 */
 function compare(x) {
 	
-    if (Math.floor(x) != x) {
+    if (Math.floor(x) - x >= Number.EPSILON) {
         return null;
     }
 	
