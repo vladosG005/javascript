@@ -1,5 +1,3 @@
-'use strict';
-
 /*
  * Возвращает x в степени целого числа n.
  *
@@ -7,7 +5,7 @@
  * @param {number} n - степень, должна быть целым числом.
  * @return {number} NaN, если n - нецелое или x = 0 и n = 0, в остальных случаях x в степени n.
 */
-function pow(x, n) {
+export function pow(x, n) {
 
     if (Math.floor(n) - n >= Number.EPSILON) {
         return NaN;
@@ -41,7 +39,7 @@ function pow(x, n) {
  * @param {number} n - максимальное натуральное число, входящее в сумму.
  * @return {number} NaN, если n - не натуральное, в остальных случаях сумму чисел от 1 до n.
 */
-let sumTo = new Function('n', `if (Math.floor(n) - n >= Number.EPSILON || n < 1) {
+export let sumTo = new Function('n', `if (Math.floor(n) - n >= Number.EPSILON || n < 1) {
         return NaN;
     }
     
@@ -59,7 +57,7 @@ let sumTo = new Function('n', `if (Math.floor(n) - n >= Number.EPSILON || n < 1)
  * @param {number} year - номер года.
  * @return {boolean} true, если year соответствует високосному году, а в остальных случаях - false.
 */
-function isLeapYear(year) {
+export function isLeapYear(year) {
 
     return year % 4 == 0 ?
             year % 100 == 0 ?
@@ -76,7 +74,7 @@ function isLeapYear(year) {
  * @param {number} n - неотрицательное число.
  * @return {BigInt|number} NaN, если n - отрицательное или дробное, в остальных случаях - факториал n.
 */
-function factorial(n) {
+export function factorial(n) {
 
     if (Math.floor(n) - n >= Number.EPSILON || n < 0) {
         return NaN;
@@ -98,7 +96,7 @@ function factorial(n) {
  * @param {number} n - целое число.
  * @return {number|BigInt} NaN, если n - нецелое, в остальных случаях - соответствующее число Фибоначчи.
 */
-function fib(n) {
+export function fib(n) {
 	
     if (Math.floor(n) - n >= Number.EPSILON) {
         return NaN;
@@ -142,7 +140,7 @@ function fib(n) {
  * @param {number} x - целое число.
  * @return {null|Function} null, если x - нецелое, в остальных случаях - вышеописанную функцию.
 */
-function compare(x) {
+export function compare(x) {
 	
     if (Math.floor(x) - x >= Number.EPSILON) {
         return null;
@@ -163,7 +161,7 @@ function compare(x) {
  * @param {Array} ...args - массив чисел.
  * @return {number} сумму чисел из ...args.
 */
-function sum(...args) {
+export function sum(...args) {
 
     let s = 0;
 
@@ -180,7 +178,7 @@ function sum(...args) {
  * @param {object} obj - объект.
  * @return {object} тот же объект obj, но с новым свойством blackSpot.
 */
-function addBlackSpot(obj) {
+export function addBlackSpot(obj) {
 	
     obj[Symbol.for('blackSpot')] = true;
     return obj;
