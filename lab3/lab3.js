@@ -10,9 +10,9 @@ export function getDecimal(num) {
 }
 
 /*
- * Возвращает дробную часть числа, т.е. какое положительное число, меньшее 1, необходимо вычесть, чтобы получить целое число.
- * @param {number} num - исходное число.
- * @return {number} дробную часть num.
+ * Нормализует ссылку: заменяет http:// на https:// или добавляет https:// в начало.
+ * @param {string} url - ссылка.
+ * @return {string} нормализованную url.
 */
 export function normalizeUrl(url) {
     
@@ -21,6 +21,24 @@ export function normalizeUrl(url) {
     if (!url.startsWith('https://')) {
         url = 'https://' + url;
     }
-    
+
     return url;
+}
+
+export function checkSpam(str) {
+}
+
+export function truncate(str, maxlength) {
+}
+
+export function camelize(str) {
+}
+
+export function fibs(n) {
+}
+
+export function arrReverseSorted(arr) {
+}
+
+export function unique(arr) {
 }
