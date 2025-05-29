@@ -25,7 +25,16 @@ export function normalizeUrl(url) {
     return url;
 }
 
+/*
+ * Проверяет, есть ли в строке спам: подстроки "XXX" или "viagra" в любом регистре.
+ * @param {string} str - исходная строка.
+ * @return {boolean} true, если в str есть спам, иначе false.
+*/
 export function checkSpam(str) {
+
+    str = str.toLowerCase();
+    return str.includes('xxx') || str.includes('viagra') ? true : false;
+
 }
 
 export function truncate(str, maxlength) {
