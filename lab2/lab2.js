@@ -109,7 +109,7 @@ export function fib(n) {
     let i = 0;
     if (n != 0) {
         // Количество знаков в двоичной записи
-	    i = Math.ceil(Math.log2(Math.abs(n)));
+	    i = Math.floor(Math.log2(Math.abs(n))) + 1;
     }
     
     while (i--) {

@@ -74,15 +74,18 @@ export function camelize(str) {
 */
 function ucFirst(str) {
 
-    str = str[0].toUpperCase() + str.slice(1);
+    if (str) {
+        str = str[0].toUpperCase() + str.slice(1);
+    }
     return str;
 
 }
 
 /*
- * Возвращает строку с первым символом в верхнем регистре.
- * @param {number} str - исходная строка.
- * @return {null|Array.BigInt} str с первым символом в верхнем регистре.
+ * Возвращает массив из чисел Фибоначчи, начиная с нулевого.
+ * Считается, что нулевой элемент равен 0, а первый - 1.
+ * @param {number} n - натуральное число, количество элементов в массиве.
+ * @return {null|Array.BigInt} null, если n ненатуральное, иначе массив чисел Фибоначчи.
 */
 export function fibs(n) {
 
@@ -90,13 +93,13 @@ export function fibs(n) {
         return null;
     }
 
-    arr = {}
+    arr = {};
     for (let i = 0; i < n; i++) {
         arr[i] = fib(i);
     }
 
     return arr;
-    
+
 }
 
 export function arrReverseSorted(arr) {
