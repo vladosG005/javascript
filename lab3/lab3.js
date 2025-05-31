@@ -143,12 +143,12 @@ function backwardsSort(a, b) {
 */
 export function unique(arr) {
 
-    set = new Set();
+    let set = new Set();
     for (let i of arr) {
         set.add(i);
     }
 
-    arruni = [];
+    let arruni = [];
     for (let i of set) {
         arruni.push(i);
     }
