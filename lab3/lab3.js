@@ -79,8 +79,24 @@ function ucFirst(str) {
 
 }
 
+/*
+ * Возвращает строку с первым символом в верхнем регистре.
+ * @param {number} str - исходная строка.
+ * @return {null|Array.BigInt} str с первым символом в верхнем регистре.
+*/
 export function fibs(n) {
 
+    if (n <= 0 || Math.floor(n) - n >= Number.EPSILON) {
+        return null;
+    }
+
+    arr = {}
+    for (let i = 0; i < n; i++) {
+        arr[i] = fib(i);
+    }
+
+    return arr;
+    
 }
 
 export function arrReverseSorted(arr) {
