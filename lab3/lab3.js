@@ -93,7 +93,7 @@ export function fibs(n) {
         return null;
     }
 
-    arr = {};
+    let arr = [];
     for (let i = 0; i < n; i++) {
         arr[i] = fib(i);
     }
@@ -102,7 +102,38 @@ export function fibs(n) {
 
 }
 
+/*
+ * Возвращает отсортированную по убыванию копию массива чисел.
+ * @param {Array.number} arr - массив чисел.
+ * @return {Array.number} отсортированную по убыванию копию arr.
+*/
 export function arrReverseSorted(arr) {
+
+    let arrcopy = [];
+    Object.assign(arrcopy, arr);
+
+    return arrcopy.sort(backwardsSort);
+
+}
+
+/*
+ * Критерий сортировки чисел по убыванию.
+ * @param {number} a - первое число.
+ * @param {number} b - второе число.
+ * @return {number} 1, если a < b, 0, если a == b, и -1, если a > b.
+*/
+function backwardsSort(a, b) {
+
+    if (a < b) {
+        return 1;
+    }
+    if (a == b) {
+        return 0;
+    }
+    if (a > b) {
+        return -1;
+    }
+
 }
 
 export function unique(arr) {
