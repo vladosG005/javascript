@@ -102,8 +102,8 @@ export function fib(n) {
         return NaN;
     }
 	
-    let x1 = -1n;
-    let x = 0n;
+    let prev = -1n;
+    let cur = 0n;
     let t = 0n;
     
     let i = 0;
@@ -111,26 +111,26 @@ export function fib(n) {
         // Количество знаков в двоичной записи
 	    i = Math.floor(Math.log2(Math.abs(n))) + 1;
     }
-    
+
     while (i--) {
 
         // Удвоение номера числа Фибоначчи
-	    t = x * (2n * x1 + x);
-        x1 = x1 * x1 + x * x;
-        x = t;
+	    t = cur * (2n * prev + cur);
+        prev = prev * prev + cur * cur;
+        cur = t;
 
         // Если i-ый разряд n == 1, то рассчитывается следующее число Фибоначчи
         if (Math.floor(n % 2 ** (i + 1) / 2 ** i) != 0) {
-            t = x + x1;
-            x1 = x;
-            x = t;
+            t = cur + prev;
+            prev = cur;
+            cur = t;
         }
         
     }
     
-	x = n < 0 && n % 2 == 0 ? -x : x; 
+	cur = n < 0 && n % 2 == 0 ? -cur : cur; 
     
-    return x;
+    return cur;
     
 }
 

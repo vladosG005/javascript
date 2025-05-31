@@ -43,7 +43,7 @@ export function checkSpam(str) {
  * Сокращает строку до указанного количества символов.
  * @param {string} str - исходная строка.
  * @param {number} maxlength - максимальное число символов в возвращаемой строке.
- * @return {string} str, сокращённую до maxlength символов с троеточием в виде последнего символа, если её длина превышает maxlength, иначе просто str. 
+ * @return {string} копию str, сокращённую до maxlength символов с троеточием в виде последнего символа, если её длина превышает maxlength, иначе просто str. 
 */
 export function truncate(str, maxlength) {
 
@@ -136,5 +136,22 @@ function backwardsSort(a, b) {
 
 }
 
+/*
+ * Возвращает копию массива, но уже без повторяющихся элементов.
+ * @param {Array} arr - массив.
+ * @return {Array} копию arr без повторений.
+*/
 export function unique(arr) {
+
+    set = new Set();
+    for (let i of arr) {
+        set.add(i);
+    }
+
+    arruni = [];
+    for (let i of set) {
+        arruni.push(i);
+    }
+    return arruni;
+
 }
