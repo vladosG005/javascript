@@ -137,6 +137,7 @@ export function fib(n) {
 /*
  * Возвращает функцию сравнения с x.
  * Возвращаемая функция возвращает true, если её аргумент больше x, null, если он равен x, и false, если он меньше x.
+ *
  * @param {number} x - целое число.
  * @return {null|Function} null, если x - нецелое, в остальных случаях - вышеописанную функцию.
 */
@@ -158,6 +159,7 @@ export function compare(x) {
 
 /*
  * Возвращает сумму передаваемых чисел.
+ *
  * @param {Array} ...args - массив чисел.
  * @return {number} сумму чисел из ...args.
 */
@@ -175,6 +177,7 @@ export function sum(...args) {
 
 /*
  * Возвращает объект с добавленным скрытым свойством blackSpot со значением true.
+ *
  * @param {object} obj - объект.
  * @return {object} тот же объект obj, но с новым свойством blackSpot.
 */
