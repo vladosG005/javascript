@@ -51,7 +51,7 @@ export function truncate(str, maxlength) {
         return str;
     }
 
-    return str.slice(maxlength - 1) + '\u2026';
+    return str.slice(0, maxlength - 1) + '\u2026';
 
 }
 
@@ -62,7 +62,8 @@ export function truncate(str, maxlength) {
 */
 export function camelize(str) {
 
-    return str.split('-').map(ucFirst).join('');
+    str = str.split('-');
+    return str[0] + str.slice(1).map(ucFirst).join('');
 
 }
 
