@@ -61,6 +61,22 @@ class Book {
         return this.price;
     }
     
+    static compare(book1, book2) {
+    
+        let p1 = book1.getPubYear();
+        let p2 = book2.getPubYear();
+        
+        if (p1 > p2) {
+            return 1;
+        }
+        if (p1 == p2) {
+            return 0;
+        }
+        if (p1 < p2) {
+            return -1;
+        }
+        
+    }
 }
 
 let b1 = new Book('Мастер и Маргарита', 1966, 204);
@@ -71,7 +87,23 @@ b2.setTitle('Горе от ума');
 b2.setPubYear(1825);
 b2.setPrice(89);
 
-console.log(`Название новой книги: ${b2.getTitle()}
-Год публикации: ${b2.getPubYear()}
-Цена: ${b2.getPrice()} ₽`);
+console.log(`Название новой книги: ${b2.getTitle()}\nГод публикации: ${b2.getPubYear()}\nЦена: ${b2.getPrice()} ₽`);
 
+let bm = [new Book('Юность', 1857, 309), new Book('Детство', 1852, 249), new Book('Отрочество', 1854, 123)];
+
+bm = bm.sort(Book.compare);
+
+for (let i of bm) {
+    console.log(`Название: ${i.getTitle()}\nГод публикации: ${i.getPubYear()}\n`);
+}
+
+function isEmpty(obj) {
+    
+    if (Reflect.ownKeys(obj).length) {
+        return false;
+    }
+    return true;
+    
+}
+
+console.log(isEmpty({[Symbol()]: true}));
