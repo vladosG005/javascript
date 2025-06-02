@@ -107,3 +107,35 @@ function isEmpty(obj) {
 }
 
 console.log(isEmpty({[Symbol()]: true}));
+
+let obj = {className: 'open menu',
+
+    addClass(cls) {
+    
+        if (!(new Set(this.className.split(' ')).has(cls))) {
+            if (!(this.className == '')) {
+                this.className += ' ';
+            } 
+            this.className += cls;
+        }
+        
+        return this;
+        
+    },
+    
+    removeClass(cls) {
+        
+        let s = this.className.split(' ');
+        
+        if (s.includes(cls)) {
+            this.className = s.filter(element => element != cls).join(' ');
+        }
+        
+        return this;
+    
+    }
+    
+}
+
+console.log(obj.addClass('navigation').className);
+console.log(obj.removeClass('menu').className);
