@@ -369,6 +369,23 @@
 
   <script>
    'use strict';
+
+   let s = document.getElementsByTagName('td');
+   let n = 0;
+
+   for (let i = 11; i < 89; i++) {
+       if (s[i].innerText.length != 1) {
+
+           if (n % 16 < 8 && n % 2 == 0 || n % 16 > 7 && n % 2 != 0) {
+               s[i].style.backgroundColor = '#ffce9e';
+           }
+           else {
+               s[i].style.backgroundColor = '#d18b47';
+           }
+           n++;
+
+       }
+   }
   </script>
   <noscript>Страница может работать некорректно, т.к. отключена поддержка JS.</noscript>
 
