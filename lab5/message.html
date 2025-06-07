@@ -68,8 +68,20 @@
 
   <script>
    'use strict';
+
+   let mr = document.getElementsByClassName('remove-button');
+
+   for (let i of mr) {
+       i.addEventListener('click', removePane);
+   }
+
+   function removePane() {
+
+       this.parentElement.hidden = true;
+
+   }
   </script>
-  <noscript></noscript>
+  <noscript>Страница может работать некорректно, т.к. отключена поддержка JS.</noscript>
 
  </body>
 </html>
