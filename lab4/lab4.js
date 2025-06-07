@@ -106,7 +106,13 @@ function isEmpty(obj) {
     
 }
 
-console.log(isEmpty({[Symbol()]: true}));
+if (isEmpty({[Symbol()]: true})) {
+    console.log('Объект пуст.');
+}
+else {
+    console.log('Объект не пуст.');
+}
+
 
 let obj = {className: 'open menu',
 
@@ -139,3 +145,21 @@ let obj = {className: 'open menu',
 
 console.log(obj.addClass('navigation').className);
 console.log(obj.removeClass('menu').className);
+
+let nobj = JSON.stringify(obj, null, 2);
+console.log(nobj);
+let obj2 = JSON.parse(nobj);
+if (obj == obj2) {
+    console.log('obj и obj2 равны.');
+}
+else {
+    console.log('obj и obj2 не равны.');
+}
+
+function getSecondsToday() {
+    let t = new Date();
+    return t;
+}
+
+function formatDate(date) {
+}
