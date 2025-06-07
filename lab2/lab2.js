@@ -29,6 +29,7 @@ export function pow(x, n) {
     for (let i = 1; i < n; i++) {
         x *= x1;
     }
+
     return x;
 
 }
@@ -60,11 +61,11 @@ export let sumTo = new Function('n', `if (Math.floor(n) - n >= Number.EPSILON ||
 export function isLeapYear(year) {
 
     return year % 4 == 0 ?
-            year % 100 == 0 ?
-                year % 400 == 0 ? true
-                : false
-            : true
-        : false;
+        year % 100 == 0 ?
+            year % 400 == 0 ? true
+            : false
+        : true
+    : false;
         
 }
 

@@ -83,6 +83,7 @@ function ucFirst(str) {
     if (str) {
         str = str[0].toUpperCase() + str.slice(1);
     }
+
     return str;
 
 }
@@ -162,6 +163,7 @@ export function unique(arr) {
     for (let i of set) {
         arruni.push(i);
     }
+    
     return arruni;
 
 }

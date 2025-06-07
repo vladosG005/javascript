@@ -16,9 +16,11 @@
    function goToLink() {
 
        if (!getNumber()) {
+
            if (!confirm('Вы точно хотите перейти по ссылке?')) {
                event.preventDefault();
            }
+           
        }
 
    }
@@ -27,6 +29,7 @@
 
        while (true) {
            let x = prompt('Введите число, большее 100:');
+
            if (x == null) {
                return false;
            }
@@ -37,7 +40,6 @@
 
    }
   </script>
-
   <noscript>Страница может работать некорректно, т.к. отключена поддержка JS.</noscript>
 
  </body>
