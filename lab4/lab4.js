@@ -158,8 +158,10 @@ else {
 
 function getSecondsToday() {
     let t = new Date();
-    return t;
+    return 3600 * t.getHours() + 60 * t.getMinutes() + t.getSeconds();
 }
+
+console.log(`Количество секунд, прошедших с начала текущего дня: ${getSecondsToday()}`);
 
 function formatDate(date) {
 }
