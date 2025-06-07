@@ -32,7 +32,7 @@
  <body>
 
   <div class="menu open">
-   <span class="title">Сладости (нажми меня)!</span>
+   <span id="sweets" class="title">Сладости (нажми меня)!</span>
    <ul>
     <li>Торт</li>
 	<li>Пончик</li>
@@ -42,8 +42,29 @@
 
   <script>
    'use strict';
+
+   sweets.addEventListener('click', collapse);
+
+   function collapse() {
+
+       if (sweets.parentElement.classList.contains('open')) {
+           sweets.parentElement.classList.remove('open');
+           
+           for (let i of sweets.nextElementSibling.children) {
+               i.hidden = true;
+           }
+       }
+       else {
+           sweets.parentElement.classList.add('open');
+
+           for (let i of sweets.nextElementSibling.children) {
+               i.hidden = false;
+           }
+       }
+       
+   }
   </script>
   <noscript>Страница может работать некорректно, т.к. отключена поддержка JS.</noscript>
-  
+
  </body>
 </html>
