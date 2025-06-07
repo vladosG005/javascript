@@ -183,7 +183,7 @@ function formatDate(date) {
         m = '0' + m;
     }
 
-    return d + '.' + m + '.' + date.getFullYear();
+    return `${d}.${m}.${date.getFullYear()}`;
 
 }
 

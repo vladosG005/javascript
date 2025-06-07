@@ -10,9 +10,24 @@
 
   <script>
    'use strict';
+   function createTree(cont, obj) {
+
+       let s = '';
+
+       if (Reflect.ownKeys(obj).length) {
+           s += '<ul>';
+
+           for (let i in obj) {
+               s += `<li> ${i} ${createTree(cont, obj[i])} </li>`;
+           }
+
+           s += '</ul>';
    
-   function createTree(obj) {
-    
+           cont.innerHTML = s;
+       }
+
+       return s;
+
    }
 
    let data = {"Рыбы": {
@@ -30,6 +45,7 @@
 		   }
 	   }
    };
+   
 
    let container = document.getElementById('container');
    createTree(container, data);
