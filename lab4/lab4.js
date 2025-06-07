@@ -28,7 +28,9 @@ class Book {
     }
     
     getTitle() {
+
         return this.title;
+        
     }
     
     setPubYear(y) {
@@ -43,7 +45,9 @@ class Book {
     }
     
     getPubYear() {
+
         return this.pubYear;
+
     }
     
     setPrice(p) {
@@ -58,7 +62,9 @@ class Book {
     }
     
     getPrice() {
+
         return this.price;
+
     }
     
     static compare(book1, book2) {
@@ -157,11 +163,28 @@ else {
 }
 
 function getSecondsToday() {
+
     let t = new Date();
     return 3600 * t.getHours() + 60 * t.getMinutes() + t.getSeconds();
+
 }
 
 console.log(`Количество секунд, прошедших с начала текущего дня: ${getSecondsToday()}`);
 
 function formatDate(date) {
+
+    let d = date.getDate();
+    let m = date.getMonth() + 1;
+    
+    if (d < 10) {
+        d = '0' + d;
+    }
+    if (m < 10) {
+        m = '0' + m;
+    }
+
+    return d + '.' + m + '.' + date.getFullYear();
+
 }
+
+console.log(`Сегодняшняя дата: ${formatDate(new Date())}`);
