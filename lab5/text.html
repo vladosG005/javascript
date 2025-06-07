@@ -12,6 +12,21 @@
 
   <script>
    'use strict';
+
+   hider.addEventListener('click', hide);
+
+   function hide() {
+
+       if (text.hidden) {
+           hider.value = 'Спрятать текст';
+       }
+       else {
+           hider.value = 'Показать текст';
+       }
+       
+       text.hidden = !text.hidden;
+
+   }
   </script>
   <noscript>Страница может работать некорректно, т.к. отключена поддержка JS.</noscript>
 
