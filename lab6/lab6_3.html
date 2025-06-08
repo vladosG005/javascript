@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+ <html lang="ru">
+ <head>
+  <meta charset="UTF-8">
+  <title>Редактируемый div</title>
+ </head>
+ <body>
+
+  <div></div>
+  <textarea id="editor" hidden></textarea>
+
+  <script>
+   'use strict';
+
+   document.addEventListener('keydown', action);
+
+   function action () {
+
+       if (event.code == 'KeyE' && event.ctrlKey) {
+           editor.hidden = false;
+           editor.previousElementSibling.hidden = true;
+
+           return;
+       }
+       if (event.code == 'KeyS' && event.ctrlKey) {
+           editor.hidden = true;
+           editor.previousElementSibling.hidden = false;
+
+           editor.previousElementSibling.innerText = editor.value;
+
+           return;
+       }
+       if (event.code == 'Escape') {
+           editor.hidden = true;
+           editor.previousElementSibling.hidden = false;
+
+           editor.value = editor.previousElementSibling.innerText;
+       }
+
+   }
+  </script>
+  <noscript>Страница может работать некорректно, т.к. отключена поддержка JS.</noscript>
+
+ </body>
+</html>
