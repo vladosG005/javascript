@@ -16,11 +16,13 @@
 
    for (let i of genres.children) {
        if (i.selected) {
-           console.log(i.value);
+           console.log(`Выбрана опция со значением "${i.value}" и текстом "${i.innerText}".`);
        }
    }
 
-   
+   genres.innerHTML += '<option value="Classic">Классика</option>';
+   genres.children[genres.children.length - 1].selected = true;
+
   </script>
   <noscript>Страница может работать некорректно, т.к. отключена поддержка JS.</noscript>
 
