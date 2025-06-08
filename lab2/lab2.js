@@ -15,9 +15,7 @@ export function pow(x, n) {
         if (x == 0) {
             return NaN;
         }
-        else {
-            return 1;
-        }
+        return 1;
     }
 
     if (n < 0) {
@@ -108,7 +106,7 @@ export function fib(n) {
     let t = 0n;
     
     let i = 0;
-    if (n != 0) {
+    if (n) {
         // Количество знаков в двоичной записи
 	    i = Math.floor(Math.log2(Math.abs(n))) + 1;
     }
