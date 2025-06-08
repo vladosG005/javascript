@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+ <head>
+  <meta charset="UTF-8">
+  <title>Плейсхолдер-подсказка</title>
+ </head>
+ <style>
+  .placeholder {
+   color: #0000ff;
+  }
+ </style>
+ <body>
+
+  <p class="placeholder" hidden>Введите что-нибудь:</p>
+  <input id="field" class="placeholder" value="Введите что-нибудь">
+
+  <script>
+   'use strict';
+
+   field.addEventListener('focus', movePlaceholderUp);
+   field.addEventListener('blur', movePlaceholderDown);
+
+   function movePlaceholderUp() {
+
+       field.value = '';
+       field.classList.remove('placeholder');
+       field.previousElementSibling.hidden = false;
+
+   }
+
+   function movePlaceholderDown() {
+
+       field.previousElementSibling.hidden = true;
+
+       if (field.value == '') {
+           field.value = 'Введите что-нибудь';
+           field.classList.add('placeholder');
+       }
+
+   }
+  </script>
+  <noscript>Страница может работать некорректно, т.к. отключена поддержка JS.</noscript>
+
+ </body>
+</html>
