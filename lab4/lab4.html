@@ -42,7 +42,7 @@
        * Сеттер, устанавливающий название книги.
        * @param {string} t - название книги (непустая строка).
        */
-       set title(t) {
+       set setTitle(t) {
     
            if (t != '') {
                this.title = t;
@@ -57,7 +57,7 @@
        * Геттер, возвращающий название книги.
        * @return {string} название книги.
        */
-       get title() {
+       get getTitle() {
 
            return this.title;
         
@@ -67,7 +67,7 @@
        * Сеттер, устанавливающий год публикации книги.
        * @param {number} y - год публикации (положительное число).
        */
-       set pubYear(y) {
+       set setPubYear(y) {
     
            if (y > 0) {
                this.pubYear = y;
@@ -82,7 +82,7 @@
        * Геттер, возвращающий год публикации книги.
        * @return {number} год публикации.
        */
-       get pubYear() {
+       get getPubYear() {
 
            return this.pubYear;
 
@@ -92,7 +92,7 @@
        * Сеттер, устанавливающий цену книги.
        * @param {number} p - цена (положительное число).
        */
-       set price(p) {
+       set setPrice(p) {
     
            if (p > 0) {
                this.price = p;
@@ -107,7 +107,7 @@
        * Геттер, возвращающий цену книги.
        * @return {number} цену.
        */
-       get price() {
+       get gePrice() {
 
            return this.price;
 
