@@ -11,20 +11,54 @@
 
    class Book {
 
+       _pubYear;
+       #price;
+
+       /*
+       * Конструктор для создания книги с известными названием, годом публикации и ценой.
+       * @constructor
+       * @param {string} t - название книги (непустая строка).
+       * @param {number} y - год публикации (положительное число).
+       * @param {number} p - цена (положительное число).
+       */
        constructor(t, y, p) {
     
-           this.title = t;
-           this.pubYear = y;
-           this.price = p;
+           if (t != '') {
+               this.title = t;
+           }
+           else {
+               console.log('В качестве названия передана пустая строка.');
+           }
+
+           if (y > 0) {
+               this.pubYear = y;
+           }
+           else {
+               console.log('В качестве года публикации передано неположительное число.');
+           }
+
+           if (p > 0) {
+               this.price = p;
+           }
+           else {
+               console.log('В качестве цены передано неположительное число.');
+           }
         
        }
 
+       /*
+       * Выводит в консоль название и цену книги.
+       */
        show() {
     
            console.log(`Название книги: ${this.title}\nЕё цена: ${this.price} ₽`);
         
        }
-    
+
+       /*
+       * Сеттер, устанавливающий название книги.
+       * @param {string} t - название книги (непустая строка).
+       */
        setTitle(t) {
     
            if (t != '') {
@@ -36,12 +70,20 @@
         
        }
     
+       /*
+       * Геттер, возвращающий название книги.
+       * @return {string} название книги.
+       */
        getTitle() {
 
            return this.title;
         
        }
-    
+       
+       /*
+       * Сеттер, устанавливающий год публикации книги.
+       * @param {number} y - год публикации (положительное число).
+       */
        setPubYear(y) {
     
            if (y > 0) {
@@ -52,13 +94,21 @@
            }
         
        }
-    
+
+       /*
+       * Геттер, возвращающий год публикации книги.
+       * @return {number} год публикации.
+       */
        getPubYear() {
 
            return this.pubYear;
 
        }
-    
+
+       /*
+       * Сеттер, устанавливающий цену книги.
+       * @param {number} p - цена (положительное число).
+       */
        setPrice(p) {
     
            if (p > 0) {
@@ -70,12 +120,24 @@
         
        }
     
+       /*
+       * Геттер, возвращающий цену книги.
+       * @return {number} цену.
+       */
        getPrice() {
 
            return this.price;
 
        }
     
+       /*
+       * Статический метод - критерий сортировки двух книг по году публикации.
+       * @param {object} первая сравниваемая книга.
+       * @param {object} вторая сравниваемая книга.
+       * @return {number} 1, если год публикации первой книги больше, чем у второй,
+       *                  0, если их года публикации равны,
+       *                 -1, если год публикации первой книги меньше, чем у второй.
+       */
        static compare(book1, book2) {
     
            let p1 = book1.getPubYear();
@@ -112,6 +174,11 @@
        console.log(`Название: ${i.getTitle()}\nГод публикации: ${i.getPubYear()}\n`);
    }
 
+   /*
+   * Проверка на пустой объект.
+   * @param {object} некий объект.
+   * @return {boolean} true, если у объекта нет свойств (в том числе скрытых), иначе false.
+   */
    function isEmpty(obj) {
     
        if (Reflect.ownKeys(obj).length) {
@@ -131,6 +198,11 @@
 
    let obj = {className: 'open menu',
 
+       /*
+       * Возвращает объект с добавленным в свойство className именем класса.
+       * @param {string} класс, который необходимо добавить.
+       * @return {object} изменённый объект.
+       */
        addClass(cls) {
     
            if (!(new Set(this.className.split(' ')).has(cls))) {
@@ -144,6 +216,11 @@
         
        },
     
+       /*
+       * Возвращает объект с удалённым из свойства className именем класса.
+       * @param {string} класс, который необходимо удалить.
+       * @return {object} изменённый объект.
+       */
        removeClass(cls) {
         
            let s = this.className.split(' ');
@@ -171,6 +248,10 @@
        console.log('obj и obj2 не равны.');
    }
 
+   /*
+   * Возвращает количество секунд, прошедших с полуночи.
+   * @return {number} количество секунд, прошедших с начала сегодняшнего дня.
+   */
    function getSecondsToday() {
 
        let t = new Date();
@@ -180,6 +261,11 @@
 
    console.log(`Количество секунд, прошедших с начала текущего дня: ${getSecondsToday()}`);
 
+   /*
+   * Возвращает дату в формате строки "дд.мм.гг".
+   * @param {object} объект класса Date.
+   * @return {string} дату в формате "дд.мм.гг".
+   */
    function formatDate(date) {
 
        let d = date.getDate();
