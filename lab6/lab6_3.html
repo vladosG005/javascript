@@ -17,7 +17,7 @@
    function action() {
 
        event.preventDefault();
-       
+
        if (event.code == 'KeyE' && event.ctrlKey) {
            editor.hidden = false;
            editor.previousElementSibling.hidden = true;
@@ -37,6 +37,11 @@
            editor.previousElementSibling.hidden = false;
 
            editor.value = editor.previousElementSibling.innerText;
+
+           return;
+       }
+       if (event.code.startsWith('Key') || event.code.startsWith('Digit')) {
+           editor.value += event.key;
        }
 
    }
