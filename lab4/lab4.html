@@ -107,7 +107,7 @@
        * Геттер, возвращающий цену книги.
        * @return {number} цену.
        */
-       get gePrice() {
+       get getPrice() {
 
            return this.price;
 
@@ -123,8 +123,8 @@
        */
        static compare(book1, book2) {
     
-           let p1 = book1.getPubYear();
-           let p2 = book2.getPubYear();
+           let p1 = book1.getPubYear;
+           let p2 = book2.getPubYear;
         
            if (p1 > p2) {
                return 1;
