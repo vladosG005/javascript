@@ -16,6 +16,8 @@
 
    function action() {
 
+       event.preventDefault();
+       
        if (event.code == 'KeyE' && event.ctrlKey) {
            editor.hidden = false;
            editor.previousElementSibling.hidden = true;
