@@ -12,7 +12,7 @@
  <body>
 
   <p class="placeholder" hidden></p>
-  <input id="field" class="placeholder" data-placeholder="Введите что-нибудь">
+  <input id="field" class="placeholder" data-placeholder="Введите что-нибудь" value="Введите что-нибудь">
 
   <script>
    'use strict';
@@ -25,6 +25,7 @@
        field.value = '';
        field.classList.remove('placeholder');
        field.previousElementSibling.hidden = false;
+       field.previousElementSibling.innerText = field.dataset.placeholder;
 
    }
 
