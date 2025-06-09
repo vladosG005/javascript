@@ -11,7 +11,7 @@
  </head>
  <body>
 
-  <table>
+  <table id="editable">
    <tr>
     <td>Ячейка 1</td>
     <td>Ячейка 2</td>
@@ -25,15 +25,30 @@
   <script>
    'use strict';
 
-   let t = document.getElementsByTagName('td');
-
-   for (let i of t) {
-       i.addEventListener('click', editCell);
-   }
+   editable.addEventListener('click', editCell);
 
    function editCell() {
 
-       this.innerHTML = `<textarea>${this.innerHTML}</textarea><br><button>OK</button><button>Отмена</button>`;
+       let tar = event.target;
+       
+       let t = tar.innerText;
+
+       tar.innerHTML = `<textarea>${this.innerText}</textarea><br><button>OK</button><button>Отмена</button>`;
+
+       tar.children[2].addEventListener('click', save);
+       tar.children[3].addEventListener('click', cancel);
+
+   }
+
+   function save() {
+
+    this.parentElement.innerHTML = this.parentElement.innerText;
+
+   }
+
+   function cancel() {
+
+    this.parentElement.innerHTML = t;
 
    }
   </script>

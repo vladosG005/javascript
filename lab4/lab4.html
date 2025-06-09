@@ -22,27 +22,10 @@
        * @param {number} p - цена (положительное число).
        */
        constructor(t, y, p) {
-    
-           if (t != '') {
-               this.title = t;
-           }
-           else {
-               console.log('В качестве названия передана пустая строка.');
-           }
 
-           if (y > 0) {
-               this.pubYear = y;
-           }
-           else {
-               console.log('В качестве года публикации передано неположительное число.');
-           }
-
-           if (p > 0) {
-               this.price = p;
-           }
-           else {
-               console.log('В качестве цены передано неположительное число.');
-           }
+           this.title = t;
+           this.pubYear = y;
+           this.price = p;
         
        }
 
@@ -59,7 +42,7 @@
        * Сеттер, устанавливающий название книги.
        * @param {string} t - название книги (непустая строка).
        */
-       setTitle(t) {
+       set title(t) {
     
            if (t != '') {
                this.title = t;
@@ -74,7 +57,7 @@
        * Геттер, возвращающий название книги.
        * @return {string} название книги.
        */
-       getTitle() {
+       get title() {
 
            return this.title;
         
@@ -84,7 +67,7 @@
        * Сеттер, устанавливающий год публикации книги.
        * @param {number} y - год публикации (положительное число).
        */
-       setPubYear(y) {
+       set pubYear(y) {
     
            if (y > 0) {
                this.pubYear = y;
@@ -99,7 +82,7 @@
        * Геттер, возвращающий год публикации книги.
        * @return {number} год публикации.
        */
-       getPubYear() {
+       get pubYear() {
 
            return this.pubYear;
 
@@ -109,7 +92,7 @@
        * Сеттер, устанавливающий цену книги.
        * @param {number} p - цена (положительное число).
        */
-       setPrice(p) {
+       set price(p) {
     
            if (p > 0) {
                this.price = p;
@@ -124,7 +107,7 @@
        * Геттер, возвращающий цену книги.
        * @return {number} цену.
        */
-       getPrice() {
+       get price() {
 
            return this.price;
 
@@ -278,7 +261,7 @@
            m = '0' + m;
        }
 
-       return `${d}.${m}.${date.getFullYear()}`;
+       return `${d}.${m}.${date.getFullYear() % 100}`;
 
    }
 
