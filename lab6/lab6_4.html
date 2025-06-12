@@ -7,6 +7,9 @@
    td {
     border: 1px solid;
    }
+   textarea {
+    resize: none;
+   }
   </style>
  </head>
  <body>
@@ -29,28 +32,36 @@
 
    function editCell() {
 
-       let tar = event.target;
-       
-       let t = tar.innerText;
+       if (!this.innerHTML.includes('<textarea>')) {
+           let tar = event.target;
 
-       tar.innerHTML = `<textarea>${this.innerText}</textarea><br><button>OK</button><button>Отмена</button>`;
+           if (tar.tagName != 'TD') {
+               return;
+           }
 
-       tar.children[2].addEventListener('click', save);
-       tar.children[3].addEventListener('click', cancel);
+           let textBefore = tar.innerText;
+
+           tar.innerHTML = `<textarea>${tar.innerText}</textarea><br><button>OK</button><button>Отмена</button>`;
+
+           let cancelListener = (e) => cancel(e, textBefore);
+           tar.children[2].addEventListener('click', save);
+           tar.children[3].addEventListener('click', cancelListener);
+       }
 
    }
 
    function save() {
 
-    this.parentElement.innerHTML = this.parentElement.innerText;
+       this.parentElement.innerHTML = this.parentElement.firstChild.value;
 
    }
 
-   function cancel() {
+   function cancel(event, text) {
 
-    this.parentElement.innerHTML = t;
+       event.target.parentElement.innerHTML = text;
 
    }
+
   </script>
   <noscript>Страница может работать некорректно, т.к. отключена поддержка JS.</noscript>
 
