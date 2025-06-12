@@ -10,7 +10,8 @@
    'use strict';
 
    class Book {
-
+   
+       title;
        _pubYear;
        #price;
 
@@ -45,7 +46,7 @@
        set title(t) {
     
            if (t != '') {
-               this._title = t;
+               this.title = t;
            }
            else {
                console.log('В качестве названия передана пустая строка.');
@@ -82,7 +83,7 @@
        * Геттер, возвращающий год публикации книги.
        * @return {number} год публикации.
        */
-       get gpubYear() {
+       get pubYear() {
 
            return this._pubYear;
 
@@ -123,8 +124,8 @@
        */
        static compare(book1, book2) {
     
-           let p1 = book1.getPubYear;
-           let p2 = book2.getPubYear;
+           let p1 = book1.pubYear;
+           let p2 = book2.pubYear;
         
            if (p1 > p2) {
                return 1;
@@ -143,18 +144,18 @@
    b1.show();
 
    let b2 = b1;
-   b2.setTitle = 'Горе от ума';
-   b2.setPubYear = 1825;
-   b2.setPrice = 89;
+   b2.title = 'Горе от ума';
+   b2.pubYear = 1825;
+   b2.price = 89;
 
-   console.log(`Название новой книги: ${b2.getTitle}\nГод публикации: ${b2.getPubYear}\nЦена: ${b2.getPrice} ₽`);
+   console.log(`Название новой книги: ${b2.title}\nГод публикации: ${b2.pubYear}\nЦена: ${b2.price} ₽`);
 
    let bm = [new Book('Юность', 1857, 309), new Book('Детство', 1852, 249), new Book('Отрочество', 1854, 123)];
 
    bm = bm.sort(Book.compare);
 
    for (let i of bm) {
-       console.log(`Название: ${i.getTitle}\nГод публикации: ${i.getPubYear}\n`);
+       console.log(`Название: ${i.title}\nГод публикации: ${i.pubYear}\n`);
    }
 
    /*
@@ -163,7 +164,7 @@
    * @return {boolean} true, если у объекта нет свойств (в том числе скрытых), иначе false.
    */
    function isEmpty(obj) {
-    
+
        if (Reflect.ownKeys(obj).length) {
            return false;
        }
@@ -177,7 +178,12 @@
    else {
        console.log('Объект не пуст.');
    }
-
+   if (isEmpty(Object.defineProperty({}, 'name', {value: 'John',}))) {
+       console.log('Объект пуст.');
+   }
+   else {
+       console.log('Объект не пуст.');
+   }
 
    let obj = {className: 'open menu',
 
@@ -218,8 +224,8 @@
     
    }
 
-   console.log(obj.addClass('navigation').className);
-   console.log(obj.removeClass('menu').className);
+   console.log(`className после добавления navigation: ${obj.addClass('navigation').className}`);
+   console.log(`className после удаления menu: ${obj.removeClass('menu').className}`);
 
    let nobj = JSON.stringify(obj, null, 2);
    console.log(nobj);
