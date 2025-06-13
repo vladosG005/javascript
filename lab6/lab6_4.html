@@ -41,7 +41,7 @@
 
            let textBefore = tar.innerText;
 
-           tar.innerHTML = `<textarea>${tar.innerText}</textarea><br><button>OK</button><button>Отмена</button>`;
+           tar.innerHTML = `<textarea>${tar.innerText}</textarea> <br> <button>OK</button> <button>Отмена</button>`;
 
            let cancelListener = (e) => cancel(e, textBefore);
            tar.children[2].addEventListener('click', save);

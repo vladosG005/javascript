@@ -9,8 +9,15 @@
   <script>
    'use strict';
 
+   /*
+   * Выводит диалоговое окно с текстовым полем, а затем выполняет функцию с аргументом, введённым в это поле. При отмене ввода аргументом будет null.
+   * @param {string} html - сообщение перед текстовым полем.
+   * @param {Function} callback - выполняемая функция.
+   */
    function showPrompt(html, callback) {
-   
+
+       callback(prompt(html));
+
    }
 
    showPrompt("Введите что-нибудь умное :)", function(value) {
